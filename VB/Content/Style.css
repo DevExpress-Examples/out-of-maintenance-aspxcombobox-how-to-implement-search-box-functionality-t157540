@@ -1,0 +1,35 @@
+﻿.search {
+    background-color: transparent;
+    border: none;
+    background-image: url(sprite.png);
+    background-position: -39px -35px;
+}
+
+.size {
+    width: 12px;
+    height: 12px;
+}
+
+.nullPadding > tbody > tr > td {
+    padding: 0px;
+}
+
+.buttonCategorySelector, .categorySelector, .categorySelector input {
+    background: linear-gradient(to bottom, #EFEFEF, #BABABA) !important;
+}
+
+    .categorySelector ::selection {
+        background: linear-gradient(to bottom, #EFEFEF, #BABABA) !important;
+    }
+    .categorySelector ::-moz-selection {
+        background: linear-gradient(to bottom, #EFEFEF, #BABABA) !important;
+    }
+
+.buttonCategorySelector {
+    border: none;
+}
+
+.detailsPanel table {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+}
