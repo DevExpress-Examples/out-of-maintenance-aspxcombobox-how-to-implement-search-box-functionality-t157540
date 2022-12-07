@@ -1,5 +1,4 @@
-﻿using DevExpress.Web.ASPxCallbackPanel;
-using DevExpress.Web.ASPxEditors;
+﻿using DevExpress.Web;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,13 +10,13 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page {
-    protected void ASPxComboBox2_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e) {
+    protected void ASPxComboBox2_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e) {
         ASPxComboBox2.DataBind();
     }
     protected void ASPxComboBox1_DataBound(object sender, EventArgs e) {
-        ASPxComboBox1.Items.Insert(0, new DevExpress.Web.ASPxEditors.ListEditItem("All", ""));
+        ASPxComboBox1.Items.Insert(0, new DevExpress.Web.ListEditItem("All", ""));
     }
-    protected void PanelDetails_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e) {
+    protected void PanelDetails_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e) {
         sqlProductDetails.SelectParameters["ProductID"].DefaultValue = ASPxComboBox2.Value.ToString();
         DataTable dataTable = ((DataView)sqlProductDetails.Select(new DataSourceSelectArguments())).Table;
         HtmlTable table = new HtmlTable { ID = "detailTable", ClientIDMode = System.Web.UI.ClientIDMode.Static };

@@ -1,5 +1,4 @@
-﻿Imports DevExpress.Web.ASPxCallbackPanel
-Imports DevExpress.Web.ASPxEditors
+﻿Imports DevExpress.Web
 Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -13,13 +12,13 @@ Imports System.Web.UI.WebControls
 Partial Public Class _Default
     Inherits System.Web.UI.Page
 
-    Protected Sub ASPxComboBox2_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxClasses.CallbackEventArgsBase)
+    Protected Sub ASPxComboBox2_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.CallbackEventArgsBase)
         ASPxComboBox2.DataBind()
     End Sub
     Protected Sub ASPxComboBox1_DataBound(ByVal sender As Object, ByVal e As EventArgs)
-        ASPxComboBox1.Items.Insert(0, New DevExpress.Web.ASPxEditors.ListEditItem("All", ""))
+        ASPxComboBox1.Items.Insert(0, New DevExpress.Web.ListEditItem("All", ""))
     End Sub
-    Protected Sub PanelDetails_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxClasses.CallbackEventArgsBase)
+    Protected Sub PanelDetails_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.CallbackEventArgsBase)
         sqlProductDetails.SelectParameters("ProductID").DefaultValue = ASPxComboBox2.Value.ToString()
         Dim dataTable As DataTable = CType(sqlProductDetails.Select(New DataSourceSelectArguments()), DataView).Table
         Dim table As HtmlTable = New HtmlTable With {.ID = "detailTable", .ClientIDMode = System.Web.UI.ClientIDMode.Static}
